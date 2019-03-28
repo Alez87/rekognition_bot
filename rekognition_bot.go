@@ -45,6 +45,11 @@ func load_configuration() {
 //    os.Exit(1)
 //}
 
+func videoHandler(m *tbot.Message){
+	m.Reply("Functionality not implemented yet")
+	// TODO
+}
+
 func imageHandler(m *tbot.Message) {
 	m.Reply("Analysis started")
 
@@ -102,6 +107,7 @@ func main() {
 		fmt.Print(err)
                 log.Fatal(err)
         }
-	bot.HandleFunc("/try", imageHandler)
+	bot.HandleFunc("/image", imageHandler)
+	bot.HandleFunc("/video", videoHandler)
         bot.ListenAndServe()
 }
